@@ -1,0 +1,149 @@
+
+To show all the regions on AWS:
+$aws ec2 describe-regions
+
+
+*Create an IAM group and user, then add the user to the group then display the group information.
+Create Group:
+$aws iam create-group --group-name <name of the group>
+$aws iam create-user --user-name <name of the user>
+$aws iam add-user-to-group  --user-name <name of the group> --group-name <name of the user>
+
+
+
+To show all the regions on AWS:
+$aws ec2 describe-regions
+
+
+*Create an IAM group and user, then add the user to the group then display the group information.
+Create Group:
+$aws iam create-group --group-name <name of the group>
+$aws iam create-user --user-name <name of the user>
+$aws iam add-user-to-group  --user-name <name of the group> --group-name <name of the user>
+
+
+*Adding user to the group using below command:
+$aws iam add-user-to-group --user-name alancli_user --group-name alancli_group
+
+
+
+*Get user and group details
+$aws iam get-user --user-name <user_name>
+$aws iam get-group --group-name <group_name> --output table
+
+
+
+
+* Attaching a policy to the user.
+$aws iam attach-user-policy --user-name <username> --policy-arn <ARN of the policy>
+
+
+* List attached user policy for a User
+$aws iam list-attached-user-policies  --user-name alancli_user
+
+
+* Create password for an IAM user
+$aws iam create-login-profile --user-name alancli_user --password ch4ng3plz
+
+
+
+* Create access key for IAM user
+$aws iam create-access-key --user-name alancli_user
+
+
+
+
+
+
+		Part2: EC2
+
+*Create key pair for accessing the ec2
+$aws ec2 create-key-pair ---key-name <Mykey> ---query ‘KeyMaterial’ -output test > filename.pem
+
+
+*Create security Group:
+$aws ec2 create-security-group --group-name <mygroup> ---description “Security group for my instance”
+
+
+* Add rules to security groups:
+$aws ec2 authorize-security-group-ingress group-name <mygroup> --protocol tcp --port 3389 --cidr 106.120.55.4/16
+
+
+* Create an EC2 from CLI
+$aws ec2 run--instances --image-id <> --count 1 --instance-type <t2-miroc> ---key-name <Key.pem> --security-groups <mygroup>
+
+
+
+
+
+	
+	
+	
+	* AWS s3 Service 
+
+*Create bucket 
+$aws s3 mb s3://cloud-AWS-accountis
+
+*Upload files to bucket:
+$aws s3 cp “<path of the file>”  s3://cloud-AWS-accountis
+
+
+
+
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+-- INSERT --
+
